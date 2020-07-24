@@ -59,7 +59,7 @@ namespace VendorTracker.Tests
       string date = "7/24/2020";
       Order newOrder = new Order(date);
       int result = newOrder.Id;
-      Assert.AreEqual(2, result);
+      Assert.AreEqual(1, result);
     }
   }
 }
