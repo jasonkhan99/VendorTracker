@@ -15,13 +15,14 @@ namespace VendorTracker.Models
       Id = _instances.Count;
     }
 
-    [TestMethod]
-    public void GetDate_ReturnsDate_String()
+    public static void ClearAll()
     {
-      string Date = "7/24/2020";
-      Item newItem = new Item(Date);
-      string result = newItem.Date;
-      Assert.AreEqual(date, result);
+      _instances.Clear();
+    }
+
+    public static List<Order> GetAll()
+    {
+      return _instances;
     }
 
   }  
