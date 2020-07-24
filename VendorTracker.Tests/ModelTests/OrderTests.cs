@@ -34,5 +34,17 @@ namespace VendorTracker.Tests
       string result = newOrder.Date;
       Assert.AreEqual(updatedDate, result);
     }
+
+    [TestMethod]
+    public void GetAll_ReturnsOrders_OrdersList()
+    {
+      string date01 = "7/24/2020";
+      string date02 = "8/3/2020";
+      Order newOrder1 = new Order(date01);
+      Order newOrder2 = new Order(date02);
+      List<Order> newList = new List<Order> { newOrder1, newOrder2 };
+      List<Order> result = Order.GetAll();
+      CollectionAssert.AreEqual(newList, result);
+    }
   }
 }
