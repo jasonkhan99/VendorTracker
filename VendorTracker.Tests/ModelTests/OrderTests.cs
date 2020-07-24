@@ -32,7 +32,7 @@ namespace VendorTracker.Tests
       string updatedDate = "8/3/2020";
       newOrder.Date = updatedDate;
       string result = newOrder.Date;
-      Assert.AreEqual(pdatedDate, result);
+      Assert.AreEqual(updatedDate, result);
     }
   }
 }
