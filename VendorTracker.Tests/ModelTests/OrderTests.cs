@@ -61,5 +61,16 @@ namespace VendorTracker.Tests
       int result = newOrder.Id;
       Assert.AreEqual(1, result);
     }
+
+    [TestMethod]
+    public void Find_ReturnsCorrectOrder_Order()
+    {
+      string date01 = "7/24/2020";
+      string date02 = "8/3/2020";
+      Order newOrder1 = new Order(date01);
+      Order newOrder2 = new Order(date02);
+      Order result = Order.Find(2);
+      Assert.AreEqual(newOrder2, result);
+    }
   }
 }
