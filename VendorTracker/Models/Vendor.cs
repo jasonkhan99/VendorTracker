@@ -6,10 +6,12 @@ namespace VendorTracker.Models
   {
     private static List<Vendor> _instances = new List<Vendor> { };
     public string Name { get; set; }
+    public string Address { get; set; }
     public int Id { get; }
 
-    public Vendor(string vendorName)
+    public Vendor(string vendorName, string address)
     {
+      Address = address;
       Name = vendorName;
       _instances.Add(this);
       Id = _instances.Count;
