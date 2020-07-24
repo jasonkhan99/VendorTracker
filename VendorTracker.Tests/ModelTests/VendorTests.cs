@@ -17,7 +17,7 @@ namespace VendorTracker.Tests
     [TestMethod]
     public void VendorConstructor_CreatesInstanceOfVendor_Vendor()
     {
-      Vendor newVendor = new Vendor("test Vendor");
+      Vendor newVendor = new Vendor("Test Vendor", "Test Address");
       Assert.AreEqual(typeof(Vendor), newVendor.GetType());
     }
 
@@ -25,16 +25,28 @@ namespace VendorTracker.Tests
     public void GetName_ReturnsName_String()
     {
       string name = "Test Vendor";
-      Vendor newVendor = new Vendor(name);
+      string address = "Test Address";
+      Vendor newVendor = new Vendor(name, address);
       string result = newVendor.Name;
       Assert.AreEqual(name, result);
+    }
+
+    [TestMethod]
+    public void Getaddress_Returnsaddress_String()
+    {
+      string name = "Test Vendor";
+      string address = "Test Address";
+      Vendor newVendor = new Vendor(name, address);
+      string result = newVendor.Address;
+      Assert.AreEqual(address, result);
     }
 
     [TestMethod]
     public void GetId_ReturnsVendorId_Int()
     {
       string name = "Test Vendor";
-      Vendor newVendor = new Vendor(name);
+      string address = "Test Address";
+      Vendor newVendor = new Vendor(name, address);
       int result = newVendor.Id;
       Assert.AreEqual(1, result);
     }
@@ -44,8 +56,10 @@ namespace VendorTracker.Tests
     {
       string name01 = "Cafe";
       string name02 = "Coffee Shop";
-      Vendor newVendor1 = new Vendor(name01);
-      Vendor newVendor2 = new Vendor(name02);
+      string address01 = "Broadway";
+      string address02 = "5th";
+      Vendor newVendor1 = new Vendor(name01, address01);
+      Vendor newVendor2 = new Vendor(name02, address02);
       List<Vendor> newList = new List<Vendor> { newVendor1, newVendor2 };
       List<Vendor> result = Vendor.GetAll();
       CollectionAssert.AreEqual(newList, result);
@@ -55,8 +69,10 @@ namespace VendorTracker.Tests
     {
       string name01 = "Cafe";
       string name02 = "Coffee Shop";
-      Vendor newVendor1 = new Vendor(name01);
-      Vendor newVendor2 = new Vendor(name02);
+      string address01 = "Broadway";
+      string address02 = "5th";
+      Vendor newVendor1 = new Vendor(name01, address01);
+      Vendor newVendor2 = new Vendor(name02, address02);
       Vendor result = Vendor.Find(2);
       Assert.AreEqual(newVendor2, result);
     }
