@@ -82,7 +82,8 @@ namespace VendorTracker.Tests
     {
       string date = "7/24/2020";
       string address = "Broadway";
-      Order newOrder = new Order(date);
+      object items = (1, "pastry");
+      Order newOrder = new Order(date, items);
       List<Order> newList = new List<Order> { newOrder };
       string name = "Test Vendor";
       Vendor newVendor = new Vendor(name, address);
